@@ -11,7 +11,9 @@
 
     <section class="experience-box">
       <article class="story-card rose-card">
-        <div class="image-placeholder">Image</div>
+        <div class="flavor-badge rose">
+          <span>Rose</span>
+        </div>
 
         <div class="content">
           <p class="date">2023 — Present</p>
@@ -27,7 +29,9 @@
       </article>
 
       <article class="story-card blueberry-card">
-        <div class="image-placeholder">Image</div>
+        <div class="flavor-badge blueberry">
+          <span>Blueberry</span>
+        </div>
 
         <div class="content">
           <p class="date">2024 — 2025</p>
@@ -42,7 +46,9 @@
       </article>
 
       <article class="story-card pistachio-card">
-        <div class="image-placeholder">Image</div>
+        <div class="flavor-badge pistachio">
+          <span>Pistachio</span>
+        </div>
 
         <div class="content">
           <p class="date">2022 — Present</p>
@@ -57,7 +63,9 @@
       </article>
 
       <article class="story-card vanilla-card">
-        <div class="image-placeholder">Image</div>
+        <div class="flavor-badge vanilla">
+          <span>Vanilla</span>
+        </div>
 
         <div class="content">
           <p class="date">2024 — 2025</p>
@@ -72,7 +80,9 @@
       </article>
 
       <article class="story-card lavender-card">
-        <div class="image-placeholder">Image</div>
+        <div class="flavor-badge lavender">
+          <span>Lavender</span>
+        </div>
 
         <div class="content">
           <p class="date">2023 — 2025</p>
@@ -87,7 +97,9 @@
       </article>
 
       <article class="story-card butter-card">
-        <div class="image-placeholder">Image</div>
+        <div class="flavor-badge butter">
+          <span>Butter</span>
+        </div>
 
         <div class="content">
           <p class="date">2023 — 2025</p>
@@ -168,19 +180,17 @@ h1 {
 
 .experience-box {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 26px;
 }
 
 .story-card {
   position: relative;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 30px;
-  align-items: center;
+  min-height: 340px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(178, 131, 65, 0.16);
   box-shadow: 0 18px 44px rgba(45, 45, 45, 0.07);
-  border-radius: 34px;
+  border-radius: 36px;
   padding: 34px;
   overflow: hidden;
 }
@@ -190,31 +200,92 @@ h1 {
   position: absolute;
   inset: 14px;
   border: 1px solid rgba(178, 131, 65, 0.14);
-  border-radius: 24px;
+  border-radius: 26px;
   pointer-events: none;
 }
 
-.image-placeholder {
-  width: 100%;
-  height: 185px;
-  border-radius: 26px;
-  border: 2px dashed rgba(178, 131, 65, 0.32);
-  background:
-    linear-gradient(145deg, rgba(244, 214, 220, 0.34), rgba(255, 255, 255, 0.85)),
-    radial-gradient(circle at top right, rgba(219, 232, 245, 0.55), transparent 60%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #9b735d;
+.story-card::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 96px;
+  border-radius: 999px;
+  right: -38px;
+  top: 28px;
+  opacity: 0.55;
+  box-shadow:
+    inset 0 -12px rgba(0, 0, 0, 0.04),
+    inset 0 8px rgba(255, 255, 255, 0.38);
+}
+
+.rose-card::after {
+  background: #f4d6dc;
+}
+
+.blueberry-card::after {
+  background: #dbe8f5;
+}
+
+.pistachio-card::after {
+  background: #dfe9de;
+}
+
+.vanilla-card::after {
+  background: #f8e8b8;
+}
+
+.lavender-card::after {
+  background: #e7dcf5;
+}
+
+.butter-card::after {
+  background: #f6dfaa;
+}
+
+.flavor-badge {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  padding: 10px 18px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  box-shadow:
+    inset 0 -6px rgba(0, 0, 0, 0.04),
+    0 10px 22px rgba(45, 45, 45, 0.06);
+}
+
+.flavor-badge span {
   font-family: Georgia, serif;
   font-style: italic;
-  box-shadow:
-    inset 0 0 0 8px rgba(255, 255, 255, 0.45),
-    0 12px 30px rgba(45, 45, 45, 0.06);
-  z-index: 1;
+  color: #6f4e37;
+}
+
+.rose {
+  background: #f4d6dc;
+}
+
+.blueberry {
+  background: #dbe8f5;
+}
+
+.pistachio {
+  background: #dfe9de;
+}
+
+.vanilla {
+  background: #f8e8b8;
+}
+
+.lavender {
+  background: #e7dcf5;
+}
+
+.butter {
+  background: #f6dfaa;
 }
 
 .content {
+  position: relative;
   z-index: 1;
 }
 
@@ -228,6 +299,7 @@ h1 {
 .story-card h2 {
   font-size: 2rem;
   margin-bottom: 8px;
+  max-width: 82%;
 }
 
 .role {
@@ -271,8 +343,8 @@ h1 {
   box-shadow: 0 10px 22px rgba(45, 45, 45, 0.05);
 }
 
-@media (max-width: 820px) {
-  .story-card {
+@media (max-width: 900px) {
+  .experience-box {
     grid-template-columns: 1fr;
   }
 

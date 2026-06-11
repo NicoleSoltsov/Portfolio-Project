@@ -10,9 +10,18 @@
     </section>
 
     <section class="project-list">
-      <article class="project-card rose-card">
-        <div class="media-placeholder">
-          <span>Image / Video</span>
+      <article class="project-card rose-card featured-project">
+        <div class="video-card">
+          <p class="video-label">Demo</p>
+          <h3>K-Drama Tracker Walkthrough</h3>
+          <a
+            href="https://www.youtube.com/watch?v=pteV4YhKMiU&t=1s"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="video-button"
+          >
+            Watch Demo
+          </a>
         </div>
 
         <div class="project-content">
@@ -22,21 +31,41 @@
 
           <p>
             A personalized K-drama tracking platform where users can save shows, track
-            progress, write reviews, rate dramas, and connect each show to its OSTs.
+            progress, write reviews, rate dramas, and connect each show to its OSTs through
+            Spotify links.
           </p>
 
           <div class="tags">
             <span>Django</span>
             <span>Vue</span>
-            <span>APIs</span>
+            <span>TMDB API</span>
+            <span>Spotify API</span>
             <span>Full Stack</span>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://www.youtube.com/watch?v=pteV4YhKMiU&t=1s"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website Demo
+            </a>
+
+            <a
+              href="https://github.com/your-username/kdrama-tracker"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </article>
 
       <article class="project-card blue-card">
-        <div class="media-placeholder">
-          <span>Image / Video</span>
+        <div class="project-icon backend-icon">
+          <span>AI</span>
         </div>
 
         <div class="project-content">
@@ -53,14 +82,25 @@
             <span>Node</span>
             <span>Express</span>
             <span>MongoDB</span>
-            <span>AI</span>
+            <span>Whisper</span>
+            <span>GPT</span>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://github.com/your-username/ai-video-summarizer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </article>
 
       <article class="project-card green-card">
-        <div class="media-placeholder">
-          <span>Image / Video</span>
+        <div class="project-icon polling-icon">
+          <span>Poll</span>
         </div>
 
         <div class="project-content">
@@ -77,14 +117,25 @@
             <span>Django REST</span>
             <span>JWT Auth</span>
             <span>Polls</span>
+            <span>Quizzes</span>
             <span>Team Project</span>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://github.com/your-username/classroom-polling-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </article>
 
       <article class="project-card yellow-card">
-        <div class="media-placeholder">
-          <span>Image / Video</span>
+        <div class="project-icon curriculum-icon">
+          <span>Py</span>
         </div>
 
         <div class="project-content">
@@ -94,7 +145,7 @@
 
           <p>
             A beginner-friendly curriculum I created for Girls Who Code to introduce students
-            to Python concepts through clear lessons, practice problems, and confidence-building
+            to Python through clear lessons, practice problems, and confidence-building
             activities.
           </p>
 
@@ -103,6 +154,16 @@
             <span>Teaching</span>
             <span>Curriculum</span>
             <span>Mentorship</span>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://github.com/your-username/python-curriculum"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </article>
@@ -209,29 +270,90 @@ h1 {
   background: #f8e8b8;
 }
 
-.media-placeholder {
+.video-card,
+.project-icon {
   height: 215px;
   border-radius: 28px;
-  border: 2px dashed rgba(178, 131, 65, 0.32);
+  border: 1px solid rgba(178, 131, 65, 0.22);
   background:
-    linear-gradient(145deg, rgba(244, 214, 220, 0.3), rgba(255, 255, 255, 0.85)),
+    linear-gradient(145deg, rgba(244, 214, 220, 0.42), rgba(255, 255, 255, 0.9)),
     radial-gradient(circle at top right, rgba(219, 232, 245, 0.55), transparent 60%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9b735d;
-  font-family: Georgia, serif;
-  font-style: italic;
   box-shadow:
     inset 0 0 0 8px rgba(255, 255, 255, 0.45),
     0 12px 30px rgba(45, 45, 45, 0.06);
   z-index: 1;
 }
 
-.media-placeholder span {
-  background: rgba(255, 255, 255, 0.65);
-  padding: 9px 16px;
+.video-card {
+  flex-direction: column;
+  text-align: center;
+  padding: 24px;
+}
+
+.video-label {
+  color: var(--ucla-blue);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin-bottom: 10px;
+}
+
+.video-card h3 {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  color: #352b27;
+  margin-bottom: 18px;
+}
+
+.video-button {
+  background: white;
+  color: #352b27;
+  text-decoration: none;
+  border: 1px solid rgba(178, 131, 65, 0.2);
   border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.video-button:hover {
+  transform: translateY(-2px);
+  background: #fffaf7;
+}
+
+.project-icon {
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
+  color: #6f4e37;
+  font-weight: 700;
+}
+
+.project-icon span {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    inset 0 -10px rgba(0, 0, 0, 0.06),
+    inset 0 8px rgba(255, 255, 255, 0.45),
+    0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.backend-icon span {
+  background: #dbe8f5;
+}
+
+.polling-icon span {
+  background: #dfe9de;
+}
+
+.curriculum-icon span {
+  background: #f8e8b8;
 }
 
 .project-content {
@@ -278,6 +400,29 @@ h1 {
   font-size: 0.9rem;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.project-links a {
+  text-decoration: none;
+  background: white;
+  color: #352b27;
+  border: 1px solid rgba(178, 131, 65, 0.2);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.project-links a:hover {
+  transform: translateY(-2px);
+  background: #f4d6dc;
+}
+
 @media (max-width: 900px) {
   .project-card {
     grid-template-columns: 1fr;
@@ -287,7 +432,8 @@ h1 {
     font-size: 3rem;
   }
 
-  .media-placeholder {
+  .video-card,
+  .project-icon {
     height: 200px;
   }
 }

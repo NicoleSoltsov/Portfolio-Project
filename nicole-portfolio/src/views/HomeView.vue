@@ -42,7 +42,7 @@
             Projects
           </RouterLink>
 
-          <a href="mailto:your-email@example.com" class="macaron yellow">
+          <a href="mailto:nesoltsov@gmail.com" class="macaron yellow">
             <span>Vanilla</span>
             Contact
           </a>
